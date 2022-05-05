@@ -1,0 +1,27 @@
+.artworkDetails {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px;
+    font-weight: 400;
+}
+
+.artworkInfo > div span:first-child {
+    padding: 10px 0px;
+    color: var(--font-primary);
+    font-weight: 600;
+    width: 100px;
+    display: inline-block;
+}
+
+.artworkInfo > div span {
+    color: var(--font-secondary);
+}
+
+.sectionRight {
+    margin-left: 30px;
+}
+
+.sectionRight img {
+    max-width: 100%;
+    height: auto;
+}

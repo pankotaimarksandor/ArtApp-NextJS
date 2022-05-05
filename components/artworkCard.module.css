@@ -1,0 +1,56 @@
+.artworkCard {
+    transition: all 0.3s;
+    box-shadow: 0px 0px 7px 0px var(--box-shadow);
+}
+
+.cardTop {
+    height: 200px;
+    overflow: hidden;
+}
+
+.cardTop img {
+    transition: 0.3s;
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.cardTop:hover img {
+    transform: scale(1.1)
+}
+
+.cardBottom {
+    padding: 20px;
+}
+
+.cardInfo h4 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.favoriteIcon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+}
+
+.svgIcon {
+    display: flex;
+    height: 30px;
+}
+
+.svgIcon svg {
+    margin-left: 5px;
+    max-height: 30px;
+}
+
+.favorite svg {
+    fill: var(--font-secondary);
+}

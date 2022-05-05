@@ -1,0 +1,23 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+.pageItem {
+    font-weight: 700;
+}
+
+.pageItem.active .pageLink {
+     color: var(--font-secondary);
+}
+
+.pageItem:hover .pageLink {
+     color: var(--font-secondary);
+}
+
+.pageLink {
+    cursor: pointer;
+    padding: 15px;
+}
