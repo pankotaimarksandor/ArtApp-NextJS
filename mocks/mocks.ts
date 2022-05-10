@@ -12,6 +12,11 @@ export const mockedArtworkDetails: ArtworkDetailsResponse = {
 }
 
 export const mockedArtworkError: ArtworkDetailsResponse = {
-    artworkDetails: {},
+    artworkDetails: {
+        image: '',
+        title: '',
+        artist: '',
+        department: ''
+    },
     error: 'Something went wrong'
 }

@@ -11,7 +11,7 @@ export type ArtworkDetails = {
 }
 
 export interface ArtworkDetailsResponse {
-    artworkDetails: ArtworkDetails | {},
+    artworkDetails: ArtworkDetails,
     error: string | null
 }
 
