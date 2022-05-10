@@ -1,21 +1,21 @@
 import noImage from '../../public/images/noImage.jpeg'
-import { GetServerSideProps } from 'next'
+import {GetServerSideProps, NextPage} from 'next'
 import { artworkApi } from '../../apis/artworkApi'
 import styles from  './artworkDetails.module.css'
 
-type ArtworkDetails = {
+export type ArtworkDetails = {
     artist: string,
     title: string,
     image: string,
     department: string
 }
 
-interface Props {
-    artworkDetails: ArtworkDetails,
+export interface ArtworkDetailsResponse {
+    artworkDetails: ArtworkDetails | {},
     error: string | null
 }
 
-const ArtworkDetails = (props: Props) => {
+const ArtworkDetailsPage = (props: ArtworkDetailsResponse) => {
 
     const handleImageSrcOnError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
         const target = e.target as HTMLImageElement
@@ -31,15 +31,15 @@ const ArtworkDetails = (props: Props) => {
                         <div className={styles.artworkInfo}>
                             <div className={styles.listItem}>
                                 <span className={styles.listText}>Artist:</span><br/>
-                                <span className={styles.listText}>{props.artworkDetails.artist}</span>
+                                <span role='details' className={styles.listText}>{props.artworkDetails.artist}</span>
                             </div>
                             <div className={styles.listItem}>
                                 <span className={styles.listText}>Title:</span><br/>
-                                <span className={styles.listText}>{props.artworkDetails.title}</span>
+                                <span role='details' className={styles.listText}>{props.artworkDetails.title}</span>
                             </div>
                             <div className={styles.listItem}>
                                 <span className={styles.listText}>Department:</span><br/>
-                                <span className={styles.listText}>{props.artworkDetails.department}</span>
+                                <span role='details' className={styles.listText}>{props.artworkDetails.department}</span>
                             </div>
                         </div>
                     </div>
@@ -79,4 +79,4 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     }
 }
 
-export default ArtworkDetails
+export default ArtworkDetailsPage
