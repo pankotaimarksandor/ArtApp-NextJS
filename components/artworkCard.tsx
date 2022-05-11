@@ -7,13 +7,13 @@ import noImage from '../public/images/noImage.jpeg'
 import styles from './artworkCard.module.css'
 import {addFavorite, getIsFavorite, removeFavorite} from '../redux/favorites'
 
-interface Props {
+export interface ArtworkCardProps {
     id: number,
     title: string,
     thumb: string
 }
 
-const ArtworkCard = (props: Props) => {
+const ArtworkCard = (props: ArtworkCardProps) => {
     const dispatch = useAppDispatch()
     const [src, setSrc] = useState<string>(props.thumb)
     //const favorite = useSelector((state) => state.favoriteReducer.favoriteIds.some(id => id === data.id))
@@ -31,22 +31,25 @@ const ArtworkCard = (props: Props) => {
     return (
         <div className={styles.artworkCard}>
             <div className={styles.cardInner}>
-                <div className={styles.cardTop}>
+                <div role={'imageContainer'} className={styles.cardTop}>
                     <Link href={`/arts/${props.id}`}>
-                        <Image
-                            src={src}
-                            height={500}
-                            width={500}
-                            alt={props.title}
-                            onError={() => setSrc(noImage.src)}
-                        />
+                        <a>
+                            <Image
+                                src={src}
+                                height={500}
+                                width={500}
+                                alt={props.title}
+                                onError={() => setSrc(noImage.src)}
+                                role={'artImage'}
+                            />
+                        </a>
                     </Link>
                 </div>
                 <div className={styles.cardBottom}>
                     <div className={styles.cardInfo}>
                         <h4>{props.title}</h4>
                     </div>
-                    <div className={styles.favoriteIcon} onClick={() => handleFavoriteClick(props.id)}>
+                    <div role={'favButton'} className={styles.favoriteIcon} onClick={() => handleFavoriteClick(props.id)}>
                         {!favorite ? 'Add favorite' : 'Remove favorite'}
                         <SVG
                             name='HEART_ICON'
