@@ -29,7 +29,7 @@ const ArtworkCard = (props: ArtworkCardProps) => {
     }
 
     return (
-        <div className={styles.artworkCard}>
+        <div role={'artworkCard'} className={styles.artworkCard}>
             <div className={styles.cardInner}>
                 <div role={'imageContainer'} className={styles.cardTop}>
                     <Link href={`/arts/${props.id}`}>
@@ -49,13 +49,13 @@ const ArtworkCard = (props: ArtworkCardProps) => {
                     <div className={styles.cardInfo}>
                         <h4>{props.title}</h4>
                     </div>
-                    <div role={'favButton'} className={styles.favoriteIcon} onClick={() => handleFavoriteClick(props.id)}>
+                    <button className={styles.favoriteIcon} onClick={() => handleFavoriteClick(props.id)}>
                         {!favorite ? 'Add favorite' : 'Remove favorite'}
                         <SVG
                             name='HEART_ICON'
                             className={favorite ? ([styles.svgIcon, styles.favorite].join(' ')) : styles.svgIcon }
                         />
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>

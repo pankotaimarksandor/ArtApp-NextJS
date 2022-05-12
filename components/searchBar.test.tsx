@@ -10,7 +10,6 @@ describe('<SearchBar />', () => {
 
         const inputField = screen.getByRole('textbox')
         expect(inputField).toBeInTheDocument()
-        expect(inputField).toBeEmpty()
 
         const button = screen.getByText('Search')
         expect(button).toBeInTheDocument()
